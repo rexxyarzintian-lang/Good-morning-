@@ -1,0 +1,613 @@
+/* =========================
+   GOOGLE STYLE RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    color:white;
+
+    overflow-x:hidden;
+
+    background:linear-gradient(180deg,#ffb6c1,#ffd6e8,#fff7fb);
+
+}
+
+/* =========================
+BACKGROUND
+========================= */
+
+.hero{
+
+    width:100%;
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    position:relative;
+
+    background:
+
+    linear-gradient(rgba(0,0,0,.20),rgba(0,0,0,.20)),
+
+    url("assets/bg-sunrise.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+}
+
+.overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    backdrop-filter:blur(2px);
+
+}
+
+/* =========================
+HERO
+========================= */
+
+.hero-content{
+
+    z-index:10;
+
+    animation:fadeUp 1.2s ease;
+
+    padding:20px;
+
+}
+
+.photo{
+
+    width:220px;
+
+    height:220px;
+
+    border-radius:30px;
+
+    object-fit:cover;
+
+    border:6px solid rgba(255,255,255,.6);
+
+    box-shadow:
+
+    0 0 25px rgba(255,255,255,.8),
+
+    0 0 60px rgba(255,105,180,.5);
+
+    animation:float 4s ease-in-out infinite;
+
+}
+
+.hero h3{
+
+    margin-top:25px;
+
+    font-size:26px;
+
+    font-weight:500;
+
+}
+
+.hero h1{
+
+    font-size:55px;
+
+    font-family:"Dancing Script",cursive;
+
+    color:#fff;
+
+    text-shadow:0 0 20px hotpink;
+
+}
+
+.subtitle{
+
+    margin-top:12px;
+
+    font-size:18px;
+
+}
+
+/* =========================
+BUTTON
+========================= */
+
+button{
+
+    margin-top:35px;
+
+    padding:16px 38px;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    color:white;
+
+    background:linear-gradient(45deg,#ff4d88,#ff7eb3);
+
+    transition:.4s;
+
+    box-shadow:0 0 20px hotpink;
+
+}
+
+button:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:0 0 40px hotpink;
+
+}
+
+/* =========================
+LETTER
+========================= */
+
+.letter{
+
+    display:none;
+
+    padding:80px 20px;
+
+}
+
+.paper{
+
+    max-width:850px;
+
+    margin:auto;
+
+    background:rgba(255,255,255,.20);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.3);
+
+    border-radius:30px;
+
+    padding:40px;
+
+    color:red;
+
+    line-height:2;
+
+    box-shadow:0 10px 40px rgba(0,0,0,.25);
+
+}
+
+.paper h2{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+    font-family:"Dancing Script",cursive;
+
+    font-size:50px;
+
+}
+
+.paper h3{
+
+    text-align:right;
+
+    margin-top:40px;
+
+    font-family:"Dancing Script",cursive;
+
+    font-size:40px;
+
+}
+
+/* =========================
+CLOCK
+========================= */
+
+.clock{
+
+    position:fixed;
+
+    left:20px;
+
+    bottom:20px;
+
+    background:rgba(255,255,255,.2);
+
+    backdrop-filter:blur(20px);
+
+    padding:14px 22px;
+
+    border-radius:20px;
+
+    color:white;
+
+    font-size:15px;
+
+    box-shadow:0 0 20px rgba(255,255,255,.3);
+
+}
+
+/* =========================
+PLAYER
+========================= */
+
+.player{
+
+    position:fixed;
+
+    right:20px;
+
+    bottom:20px;
+
+    background:rgba(255,255,255,.2);
+
+    backdrop-filter:blur(20px);
+
+    padding:15px 25px;
+
+    border-radius:20px;
+
+    color:white;
+
+    box-shadow:0 0 20px rgba(255,255,255,.3);
+
+}
+
+/* =========================
+LOADING
+========================= */
+
+#loading{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#ff7eb3;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+}
+
+.loader-heart{
+
+    font-size:70px;
+
+    animation:heartbeat 1s infinite;
+
+}
+
+/* =========================
+ANIMATION
+========================= */
+
+@keyframes heartbeat{
+
+0%{transform:scale(1);}
+
+50%{transform:scale(1.3);}
+
+100%{transform:scale(1);}
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(60px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-15px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+/* =========================
+SAKURA & HEART
+========================= */
+
+.sakura,
+.heart{
+
+    position:fixed;
+
+    top:-30px;
+
+    pointer-events:none;
+
+    animation:fall linear forwards;
+
+}
+
+@keyframes fall{
+
+    to{
+
+        transform:
+
+        translateY(110vh)
+
+        rotate(360deg);
+
+    }
+
+}
+
+/* =========================
+RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+.hero h1{
+
+font-size:42px;
+
+}
+
+.photo{
+
+width:180px;
+
+height:180px;
+
+}
+
+.paper{
+
+padding:25px;
+
+}
+
+.paper h2{
+
+font-size:38px;
+
+}
+
+.paper h3{
+
+font-size:30px;
+
+}
+
+.clock,.player{
+
+font-size:12px;
+
+padding:10px 15px;
+
+}
+
+}
+
+.photo:hover{
+
+transform:scale(1.05);
+
+transition:.5s;
+
+box-shadow:
+0 0 20px white,
+0 0 50px hotpink,
+0 0 90px deeppink;
+
+}
+
+.hero{
+
+animation:bgMove 25s ease infinite;
+
+}
+
+@keyframes bgMove{
+
+0%{
+
+background-position:center top;
+
+}
+
+50%{
+
+background-position:center center;
+
+}
+
+100%{
+
+background-position:center top;
+
+}
+
+}
+
+#typing{
+
+text-shadow:
+0 0 10px white,
+0 0 20px hotpink,
+0 0 35px deeppink;
+
+}
+
+/* ===== SUN GLOW ===== */
+
+#sunGlow{
+
+position:fixed;
+
+top:-180px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+width:420px;
+
+height:420px;
+
+background:radial-gradient(circle,
+rgba(255,220,120,.95),
+rgba(255,170,70,.45),
+transparent);
+
+filter:blur(35px);
+
+animation:sunMove 8s ease-in-out infinite;
+
+z-index:-1;
+
+}
+
+@keyframes sunMove{
+
+0%{
+
+transform:translateX(-50%) scale(1);
+
+}
+
+50%{
+
+transform:translateX(-50%) scale(1.08);
+
+}
+
+100%{
+
+transform:translateX(-50%) scale(1);
+
+}
+
+}
+
+/* ===== STARS ===== */
+
+.star{
+
+position:fixed;
+
+background:white;
+
+border-radius:50%;
+
+animation:twinkle 2s infinite alternate;
+
+}
+
+@keyframes twinkle{
+
+from{
+
+opacity:.2;
+
+}
+
+to{
+
+opacity:1;
+
+}
+
+}
+
+/* ===== LOVE COUNTER ===== */
+
+.love-counter{
+
+margin:80px auto;
+
+text-align:center;
+
+font-size:22px;
+
+color:white;
+
+font-weight:bold;
+
+text-shadow:0 0 10px hotpink;
+
+}
+
+/* ===== PHOTO HOVER ===== */
+
+.photo{
+
+transition:.5s;
+
+}
+
+.photo:hover{
+
+transform:scale(1.05) rotate(-2deg);
+
+}
